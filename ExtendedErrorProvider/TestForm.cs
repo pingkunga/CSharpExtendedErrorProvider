@@ -19,6 +19,7 @@ namespace TestProjectExtendedErrorProvider
         private void TestForm_Load(object sender, EventArgs e)
         {
             // Add controls one by one in error provider.
+            MyErrorProvider.Controls.Add((object)tsStudentId, "Student Id");
             MyErrorProvider.Controls.Add( (object)txtStudentName, "Student Full Name");
             MyErrorProvider.Controls.Add((object)txtStudentAge, "Age");
             MyErrorProvider.Controls.Add( (object)txtEmergencyContact, "Emergency Contact Number");
@@ -35,7 +36,7 @@ namespace TestProjectExtendedErrorProvider
             {
                 MessageBox.Show("Data submited successfully.");
             }
-            MyErrorProvider.ClearAllErrorMessages();
+            //MyErrorProvider.ClearAllErrorMessages();
         }
 
         private void chkAge_CheckedChanged(object sender, EventArgs e)

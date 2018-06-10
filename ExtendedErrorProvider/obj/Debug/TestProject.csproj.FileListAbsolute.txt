@@ -11,3 +11,16 @@ E:\09Warroom\01PlayGround\extendederrorprovider_csharp_vs2005_\ExtendedErrorProv
 E:\09Warroom\01PlayGround\extendederrorprovider_csharp_vs2005_\ExtendedErrorProvider\obj\Debug\ExtendedErrorProvider.exe
 E:\09Warroom\01PlayGround\extendederrorprovider_csharp_vs2005_\ExtendedErrorProvider\obj\Debug\ExtendedErrorProvider.pdb
 E:\09Warroom\01PlayGround\extendederrorprovider_csharp_vs2005_\ExtendedErrorProvider\bin\Debug\ExtendedErrorProvider.exe.config
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\bin\Debug\ExtendedErrorProvider.exe.config
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\bin\Debug\ExtendedErrorProvider.exe
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\bin\Debug\ExtendedErrorProvider.pdb
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\bin\Debug\ExtendedErrorProviderCSharp.dll
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\bin\Debug\ExtendedErrorProviderCSharp.pdb
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProject.csprojAssemblyReference.cache
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProjectExtendedErrorProvider.Properties.Resources.resources
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProjectExtendedErrorProvider.TestForm.resources
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProject.csproj.GenerateResource.cache
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\TestProject.csproj.CopyComplete
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\ExtendedErrorProvider.exe
+E:\09Warroom\01PlayGround\ExtendedErrorProvider\ExtendedErrorProvider\obj\Debug\ExtendedErrorProvider.pdb

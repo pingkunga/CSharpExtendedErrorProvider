@@ -1,4 +1,6 @@
 //Chatri Ngambenchawong
+using System.Windows.Forms;
+
 public class ErrorProviderExtended : System.Windows.Forms.ErrorProvider
 {
 
@@ -43,18 +45,20 @@ public class ErrorProviderExtended : System.Windows.Forms.ErrorProvider
         {
             if (Controls[i].Validate)
             {
-                if (Controls[i].ControlObj is System.Windows.Forms.Control 
-                 &&((System.Windows.Forms.Control)Controls[i].ControlObj).Text.Trim() == "")
+                if (Helper.IsInheritfromControl(Controls[i].ControlObj)
+                 && ((System.Windows.Forms.Control)Controls[i].ControlObj).Text.Trim() == "")
                 {
                     msg += "> " + Controls[i].DisplayName + "\r\n";
                     SetError((System.Windows.Forms.Control)Controls[i].ControlObj, Controls[i].ErrorMessage);
                     berrors = true;
                 }
-                else if (Controls[i].ControlObj is System.Windows.Forms.ToolStrip
-                    && ((System.Windows.Forms.ToolStrip)Controls[i].ControlObj).Text.Trim() == "")
+                else if (Helper.IsInheritfromToolStrip(Controls[i].ControlObj)
+                    && ((System.Windows.Forms.ToolStripItem)Controls[i].ControlObj).Text.Trim() == "")
                 {
                     msg += "> " + Controls[i].DisplayName + "\r\n";
-                    SetError((System.Windows.Forms.ToolStrip)Controls[i].ControlObj, Controls[i].ErrorMessage);
+
+                    //https://referencesource.microsoft.com/System.Windows.Forms/winforms/Managed/System/WinForms/ErrorProvider.cs.html#3bbbce97fc8bddc8
+                    SetToolStripError((System.Windows.Forms.ToolStripItem)Controls[i].ControlObj, Controls[i].ErrorMessage);
                     berrors = true;
                 }
                 else
@@ -78,6 +82,17 @@ public class ErrorProviderExtended : System.Windows.Forms.ErrorProvider
         }
     }
 
+    public void SetToolStripError(ToolStripItem pToolStrip, string text)
+    {
+        pToolStrip.BackColor = System.Drawing.Color.Orange;
+        pToolStrip.ToolTipText = text;
+    }
+
+    public void ClearToolStripError(ToolStripItem pToolStrip)
+    {
+        pToolStrip.BackColor = default(System.Drawing.Color);
+        pToolStrip.ToolTipText = "";
+    }
     // Following function clears error messages from all controls.
     public void ClearAllErrorMessages()
     {
@@ -93,7 +108,7 @@ public class ErrorProviderExtended : System.Windows.Forms.ErrorProvider
         if (Helper.IsInheritfromControl(ControlObj))
             SetError((System.Windows.Forms.Control)ControlObj, "");
         else if (Helper.IsInheritfromToolStrip(ControlObj))
-            SetError((System.Windows.Forms.ToolStrip)ControlObj, "");
+            ClearToolStripError((System.Windows.Forms.ToolStripItem)ControlObj);
     }
 
     // This function hooks validation event with all controls.
@@ -135,7 +150,7 @@ public class Helper
 
     public static bool IsInheritfromToolStrip(object pControlObj)
     {
-        return pControlObj is System.Windows.Forms.ToolStrip;
+        return pControlObj is System.Windows.Forms.ToolStripItem;
     }
 }
 
@@ -196,7 +211,7 @@ public class ValidationControlCollection : System.Collections.CollectionBase
                 return i;
             }
             else if (Helper.IsInheritfromToolStrip(this[i].ControlObj)
-                && (((System.Windows.Forms.ToolStrip)this[i].ControlObj).Name.ToUpper() == ControlName.ToUpper()))
+                && (((System.Windows.Forms.ToolStripItem)this[i].ControlObj).Name.ToUpper() == ControlName.ToUpper()))
             {
                 return i;
             }
